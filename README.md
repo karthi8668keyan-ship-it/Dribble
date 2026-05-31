@@ -1,35 +1,25 @@
-# Project Responsive Web Design using Bootstrap
-## Date:
+# Dribbble Clone – Django + Bootstrap 5
 
-## AIM:
-To create a simplified clone of Dribbble (https://dribbble.com/) landing page.
+A simplified Dribbble landing-page clone built with **Django** and **Bootstrap 5**.
 
+## Project Structure
 
-## DESIGN STEPS:
+```
+Dribble/
+├── dribbble_clone/        ← Django project (settings, urls)
+├── shots/                 ← Django app
+│   ├── templates/shots/index.html   ← Bootstrap 5 HTML
+│   ├── static/shots/css/style.css   ← Custom CSS
+│   └── static/shots/js/main.js      ← Custom JS
+├── manage.py
+└── requirements.txt
+```
 
-### Step 1:
-Clone the repository from GitHub.
+## Run Locally
 
-### Step 2:
-Create Django Admin project.
-
-### Step 3:
-Create a New App under the Django Admin project.
-
-### Step 4:
-Insert the necessary CSS and JavaScript files as external in order to use Bootstrap.
-
-### Step 5:
-Create a HTML file and include the needed Bootstrap components.
-
-### Step 6:
-Publish the website in the LocalHost.
-
-## PROGRAM :
-
-
-## OUTPUT:
-
-
-## RESULT:
-The Project for responsive web design using Bootstrap is completed successfully.
+```bash
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+# Open: http://127.0.0.1:8000/
+```

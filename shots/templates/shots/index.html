@@ -1,0 +1,518 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dribbble – Discover the World's Top Designers</title>
+
+  <!-- Bootstrap 5 CSS (External CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Bootstrap Icons (External CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <!-- Google Fonts (External CDN) -->
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{% static 'shots/css/style.css' %}"/>
+</head>
+<body>
+
+<!-- ───────────────────────── NAVBAR ───────────────────────── -->
+<nav class="navbar navbar-expand-lg drib-navbar sticky-top">
+  <div class="container-fluid px-4">
+
+    <!-- Brand -->
+    <a class="navbar-brand drib-logo" href="#">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="16" fill="#EA4C89"/>
+        <path d="M16 4C9.373 4 4 9.373 4 16s5.373 12 12 12 12-5.373 12-12S22.627 4 16 4zm7.8 5.54a10.17 10.17 0 012.38 6.62c-.34-.07-3.78-.77-7.24-.33-.08-.18-.15-.37-.23-.56-.22-.53-.46-1.06-.71-1.58 3.83-1.56 5.57-3.8 5.8-4.15zM16 5.82c2.64 0 5.05.97 6.88 2.56-.2.32-1.78 2.4-5.47 3.78-1.71-3.14-3.61-5.72-3.9-6.1A10.22 10.22 0 0116 5.82zM11.7 6.7c.28.36 2.15 2.96 3.88 6.04-4.9 1.3-9.22 1.28-9.7 1.27A10.21 10.21 0 0111.7 6.7zM5.8 16.01v-.27c.47.01 5.55.1 10.77-1.49.3.59.59 1.18.86 1.79-.14.04-.27.08-.41.13-5.4 1.74-8.27 6.5-8.51 6.92A10.18 10.18 0 015.8 16zM16 26.2a10.17 10.17 0 01-6.28-2.16c.2-.4 2.51-4.87 8.49-6.96l.07-.02a36.7 36.7 0 011.85 6.55A10.16 10.16 0 0116 26.2zm5.84-1.75a38.44 38.44 0 00-1.72-6.14c3.25-.52 6.1.33 6.45.44a10.22 10.22 0 01-4.73 5.7z" fill="white"/>
+      </svg>
+      <span class="ms-2">Dribbble</span>
+    </a>
+
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <!-- Nav Links -->
+      <ul class="navbar-nav mx-auto gap-1">
+        <li class="nav-item dropdown">
+          <a class="nav-link drib-nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Explore</a>
+          <ul class="dropdown-menu drib-dropdown">
+            <li><a class="dropdown-item" href="#"><i class="bi bi-fire me-2 text-danger"></i>Popular</a></li>
+            <li><a class="dropdown-item" href="#"><i class="bi bi-clock me-2 text-primary"></i>New &amp; Noteworthy</a></li>
+            <li><a class="dropdown-item" href="#"><i class="bi bi-stars me-2 text-warning"></i>Following</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link drib-nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Hire a Designer</a>
+          <ul class="dropdown-menu drib-dropdown">
+            <li><a class="dropdown-item" href="#">Post a Job</a></li>
+            <li><a class="dropdown-item" href="#">Designer Search</a></li>
+            <li><a class="dropdown-item" href="#">Freelance</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link drib-nav-link" href="#">Find Jobs</a></li>
+        <li class="nav-item"><a class="nav-link drib-nav-link" href="#">Blog</a></li>
+      </ul>
+
+      <!-- Search -->
+      <div class="drib-search-wrap me-3 d-none d-lg-flex">
+        <i class="bi bi-search drib-search-icon"></i>
+        <input type="text" class="drib-search" placeholder="Search…"/>
+      </div>
+
+      <!-- CTA -->
+      <div class="d-flex gap-2 align-items-center">
+        <a href="#" class="btn drib-btn-ghost">Log In</a>
+        <a href="#" class="btn drib-btn-primary">Sign Up</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ──────────────────────── HERO SECTION ──────────────────────── -->
+<section class="drib-hero">
+  <div class="container text-center">
+    <div class="drib-hero-badge mb-4">
+      <span><i class="bi bi-palette2 me-1"></i> Over 10 million creatives</span>
+    </div>
+    <h1 class="drib-hero-title">
+      Discover the world's<br/>
+      <span class="drib-gradient-text">top designers</span>
+    </h1>
+    <p class="drib-hero-sub">
+      Explore, source, and hire the most talented designers in the world<br class="d-none d-md-block"/>
+      ready to take on your next project.
+    </p>
+    <div class="d-flex justify-content-center gap-3 flex-wrap mt-4">
+      <a href="#" class="btn drib-btn-hero-primary px-4 py-3">Get started — it's free</a>
+      <a href="#" class="btn drib-btn-hero-ghost px-4 py-3">Learn what Dribbble can do</a>
+    </div>
+
+    <!-- Tags -->
+    <div class="drib-tags mt-5">
+      <span class="drib-tag">UI Design</span>
+      <span class="drib-tag">Branding</span>
+      <span class="drib-tag">Illustration</span>
+      <span class="drib-tag">Typography</span>
+      <span class="drib-tag">Motion</span>
+      <span class="drib-tag">Mobile</span>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────── SHOTS GRID ──────────────────────── -->
+<section class="drib-shots py-5">
+  <div class="container-fluid px-4 px-md-5">
+
+    <!-- Filter Bar -->
+    <div class="drib-filter-bar mb-4 d-flex align-items-center justify-content-between flex-wrap gap-3">
+      <div class="d-flex gap-2 flex-wrap">
+        <button class="drib-filter-btn active">Popular</button>
+        <button class="drib-filter-btn">New</button>
+        <button class="drib-filter-btn">Following</button>
+        <button class="drib-filter-btn">Animation</button>
+        <button class="drib-filter-btn">Branding</button>
+        <button class="drib-filter-btn">Illustration</button>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <span class="drib-filter-label">Timeframe:</span>
+        <select class="drib-select">
+          <option>This week</option>
+          <option>This month</option>
+          <option>All time</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Shots Grid -->
+    <div class="row g-4">
+
+      <!-- Shot Card 1 -->
+      <div class="col-6 col-md-4 col-xl-3">
+        <div class="drib-card">
+          <div class="drib-card-thumb" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+            <div class="drib-card-overlay">
+              <div class="drib-card-actions">
+                <button class="drib-action-btn"><i class="bi bi-heart"></i> 1.2k</button>
+                <button class="drib-action-btn"><i class="bi bi-eye"></i> 8.4k</button>
+              </div>
+            </div>
+            <div class="drib-mock-ui">
+              <div class="drib-mock-bar"></div>
+              <div class="drib-mock-block tall" style="background:rgba(255,255,255,0.25);border-radius:12px;"></div>
+              <div class="drib-mock-row">
+                <div class="drib-mock-block" style="background:rgba(255,255,255,0.3);border-radius:8px;"></div>
+                <div class="drib-mock-block" style="background:rgba(255,255,255,0.2);border-radius:8px;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="drib-card-meta">
+            <div class="drib-card-avatar" style="background:#764ba2;">A</div>
+            <div>
+              <div class="drib-card-name">Dashboard UI Kit</div>
+              <div class="drib-card-author">Alex Morgan</div>
+            </div>
+            <span class="drib-card-badge ms-auto">Pro</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shot Card 2 -->
+      <div class="col-6 col-md-4 col-xl-3">
+        <div class="drib-card">
+          <div class="drib-card-thumb" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+            <div class="drib-card-overlay">
+              <div class="drib-card-actions">
+                <button class="drib-action-btn"><i class="bi bi-heart"></i> 2.5k</button>
+                <button class="drib-action-btn"><i class="bi bi-eye"></i> 14k</button>
+              </div>
+            </div>
+            <div class="drib-mock-ui drib-mock-brand">
+              <div class="drib-brand-logo">✦</div>
+              <div class="drib-brand-text">BRAND</div>
+            </div>
+          </div>
+          <div class="drib-card-meta">
+            <div class="drib-card-avatar" style="background:#f5576c;">S</div>
+            <div>
+              <div class="drib-card-name">Brand Identity</div>
+              <div class="drib-card-author">Sara Chen</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shot Card 3 -->
+      <div class="col-6 col-md-4 col-xl-3">
+        <div class="drib-card">
+          <div class="drib-card-thumb" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+            <div class="drib-card-overlay">
+              <div class="drib-card-actions">
+                <button class="drib-action-btn"><i class="bi bi-heart"></i> 987</button>
+                <button class="drib-action-btn"><i class="bi bi-eye"></i> 6.1k</button>
+              </div>
+            </div>
+            <div class="drib-mock-ui drib-mock-mobile">
+              <div class="drib-phone">
+                <div class="drib-phone-screen">
+                  <div class="drib-phone-bar"></div>
+                  <div class="drib-phone-content"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="drib-card-meta">
+            <div class="drib-card-avatar" style="background:#00f2fe;color:#333;">R</div>
+            <div>
+              <div class="drib-card-name">Mobile App Design</div>
+              <div class="drib-card-author">Rahul Dev</div>
+            </div>
+            <span class="drib-card-badge ms-auto">Pro</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shot Card 4 -->
+      <div class="col-6 col-md-4 col-xl-3">
+        <div class="drib-card">
+          <div class="drib-card-thumb" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+            <div class="drib-card-overlay">
+              <div class="drib-card-actions">
+                <button class="drib-action-btn"><i class="bi bi-heart"></i> 3.3k</button>
+                <button class="drib-action-btn"><i class="bi bi-eye"></i> 20k</button>
+              </div>
+            </div>
+            <div class="drib-mock-ui drib-mock-illus">
+              <div class="drib-illus-shape circle"></div>
+              <div class="drib-illus-shape triangle"></div>
+              <div class="drib-illus-shape rect"></div>
+            </div>
+          </div>
+          <div class="drib-card-meta">
+            <div class="drib-card-avatar" style="background:#43e97b;color:#333;">M</div>
+            <div>
+              <div class="drib-card-name">Geometric Illustration</div>
+              <div class="drib-card-author">Maria López</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shot Card 5 -->
+      <div class="col-6 col-md-4 col-xl-3">
+        <div class="drib-card">
+          <div class="drib-card-thumb" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+            <div class="drib-card-overlay">
+              <div class="drib-card-actions">
+                <button class="drib-action-btn"><i class="bi bi-heart"></i> 4.1k</button>
+                <button class="drib-action-btn"><i class="bi bi-eye"></i> 28k</button>
+              </div>
+            </div>
+            <div class="drib-mock-ui" style="display:flex;align-items:center;justify-content:center;">
+              <div style="font-size:3.5rem;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.2));">🎨</div>
+            </div>
+          </div>
+          <div class="drib-card-meta">
+            <div class="drib-card-avatar" style="background:#fee140;color:#333;">J</div>
+            <div>
+              <div class="drib-card-name">Abstract Artwork</div>
+              <div class="drib-card-author">Jamie Wu</div>
+            </div>
+            <span class="drib-card-badge ms-auto">Pro</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shot Card 6 -->
+      <div class="col-6 col-md-4 col-xl-3">
+        <div class="drib-card">
+          <div class="drib-card-thumb" style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);">
+            <div class="drib-card-overlay">
+              <div class="drib-card-actions">
+                <button class="drib-action-btn"><i class="bi bi-heart"></i> 1.8k</button>
+                <button class="drib-action-btn"><i class="bi bi-eye"></i> 11k</button>
+              </div>
+            </div>
+            <div class="drib-mock-ui" style="display:flex;flex-direction:column;gap:8px;padding:16px;">
+              <div style="height:12px;background:rgba(255,255,255,0.5);border-radius:6px;width:60%;"></div>
+              <div style="height:8px;background:rgba(255,255,255,0.35);border-radius:6px;width:90%;"></div>
+              <div style="height:8px;background:rgba(255,255,255,0.35);border-radius:6px;width:75%;"></div>
+              <div style="height:36px;background:rgba(255,255,255,0.4);border-radius:10px;margin-top:8px;"></div>
+            </div>
+          </div>
+          <div class="drib-card-meta">
+            <div class="drib-card-avatar" style="background:#a18cd1;">T</div>
+            <div>
+              <div class="drib-card-name">Landing Page</div>
+              <div class="drib-card-author">Tina Rossi</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shot Card 7 -->
+      <div class="col-6 col-md-4 col-xl-3">
+        <div class="drib-card">
+          <div class="drib-card-thumb" style="background:linear-gradient(135deg,#0f0c29,#302b63,#24243e);">
+            <div class="drib-card-overlay">
+              <div class="drib-card-actions">
+                <button class="drib-action-btn"><i class="bi bi-heart"></i> 5.6k</button>
+                <button class="drib-action-btn"><i class="bi bi-eye"></i> 33k</button>
+              </div>
+            </div>
+            <div class="drib-mock-ui" style="display:flex;align-items:center;justify-content:center;">
+              <div class="drib-dark-widget">
+                <div class="drib-dw-dot" style="background:#FF6B6B;"></div>
+                <div class="drib-dw-dot" style="background:#FFD93D;"></div>
+                <div class="drib-dw-dot" style="background:#6BCB77;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="drib-card-meta">
+            <div class="drib-card-avatar" style="background:#302b63;">K</div>
+            <div>
+              <div class="drib-card-name">Dark Theme UI</div>
+              <div class="drib-card-author">Kenji Park</div>
+            </div>
+            <span class="drib-card-badge ms-auto">Pro</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shot Card 8 -->
+      <div class="col-6 col-md-4 col-xl-3">
+        <div class="drib-card">
+          <div class="drib-card-thumb" style="background:linear-gradient(135deg,#ffecd2,#fcb69f);">
+            <div class="drib-card-overlay">
+              <div class="drib-card-actions">
+                <button class="drib-action-btn"><i class="bi bi-heart"></i> 2.9k</button>
+                <button class="drib-action-btn"><i class="bi bi-eye"></i> 17k</button>
+              </div>
+            </div>
+            <div class="drib-mock-ui" style="display:flex;align-items:center;justify-content:center;">
+              <div style="font-size:3.5rem;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.15));">🏡</div>
+            </div>
+          </div>
+          <div class="drib-card-meta">
+            <div class="drib-card-avatar" style="background:#fcb69f;color:#333;">L</div>
+            <div>
+              <div class="drib-card-name">Real Estate App</div>
+              <div class="drib-card-author">Lena Moore</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /row -->
+
+    <!-- Load More -->
+    <div class="text-center mt-5">
+      <a href="#" class="btn drib-btn-load">Load more shots <i class="bi bi-arrow-down ms-1"></i></a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ──────────────────────── HIRE SECTION ──────────────────────── -->
+<section class="drib-hire py-5">
+  <div class="container py-3">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <div class="drib-hire-badge mb-3">For Clients</div>
+        <h2 class="drib-section-title">Find your next <span class="drib-pink">designer</span></h2>
+        <p class="drib-section-sub">The world's leading brands use Dribbble to hire creative talent. Browse millions of top-rated portfolios to find your perfect match.</p>
+        <ul class="drib-hire-list">
+          <li><i class="bi bi-check-circle-fill text-success me-2"></i>Searchable profiles with portfolios</li>
+          <li><i class="bi bi-check-circle-fill text-success me-2"></i>Designer availability indicators</li>
+          <li><i class="bi bi-check-circle-fill text-success me-2"></i>Post jobs &amp; get matched instantly</li>
+        </ul>
+        <a href="#" class="btn drib-btn-primary mt-3 px-4">Post a Job</a>
+      </div>
+      <div class="col-lg-6">
+        <div class="drib-hire-cards">
+          <div class="drib-profile-card">
+            <div class="drib-pc-avatar" style="background:linear-gradient(135deg,#667eea,#764ba2);">A</div>
+            <div class="drib-pc-info">
+              <div class="drib-pc-name">Alex Morgan</div>
+              <div class="drib-pc-role">UI/UX Designer · San Francisco</div>
+            </div>
+            <span class="drib-available-badge">Available</span>
+          </div>
+          <div class="drib-profile-card">
+            <div class="drib-pc-avatar" style="background:linear-gradient(135deg,#f093fb,#f5576c);">S</div>
+            <div class="drib-pc-info">
+              <div class="drib-pc-name">Sara Chen</div>
+              <div class="drib-pc-role">Brand Designer · New York</div>
+            </div>
+            <span class="drib-available-badge">Available</span>
+          </div>
+          <div class="drib-profile-card">
+            <div class="drib-pc-avatar" style="background:linear-gradient(135deg,#43e97b,#38f9d7);color:#333;">M</div>
+            <div class="drib-pc-info">
+              <div class="drib-pc-name">Maria López</div>
+              <div class="drib-pc-role">Illustrator · Barcelona</div>
+            </div>
+            <span class="drib-busy-badge">Busy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────── CATEGORIES ──────────────────────── -->
+<section class="drib-categories py-5 bg-light">
+  <div class="container">
+    <h2 class="drib-section-title text-center mb-2">Explore by category</h2>
+    <p class="drib-section-sub text-center mb-5">Find inspiration in every style and discipline</p>
+    <div class="row g-3">
+      {% for cat in categories %}
+      <div class="col-6 col-md-4 col-lg-3">
+        <a href="#" class="drib-cat-card" style="background:{{ cat.bg }};">
+          <span class="drib-cat-icon">{{ cat.icon }}</span>
+          <span class="drib-cat-label">{{ cat.name }}</span>
+          <span class="drib-cat-count">{{ cat.count }} shots</span>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────────── CTA BANNER ──────────────────────── -->
+<section class="drib-cta-banner py-5">
+  <div class="container text-center py-3">
+    <h2 class="drib-cta-title">Start showcasing your work</h2>
+    <p class="drib-cta-sub">Join millions of designers and get discovered by the world's top brands.</p>
+    <a href="#" class="btn drib-btn-cta mt-2">Create your free account</a>
+  </div>
+</section>
+
+<!-- ──────────────────────── FOOTER ──────────────────────── -->
+<footer class="drib-footer pt-5 pb-4">
+  <div class="container">
+    <div class="row g-4">
+      <!-- Brand -->
+      <div class="col-lg-4 col-md-6">
+        <div class="drib-footer-brand mb-3">
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="16" fill="#EA4C89"/>
+            <path d="M16 4C9.373 4 4 9.373 4 16s5.373 12 12 12 12-5.373 12-12S22.627 4 16 4zm7.8 5.54a10.17 10.17 0 012.38 6.62c-.34-.07-3.78-.77-7.24-.33-.08-.18-.15-.37-.23-.56-.22-.53-.46-1.06-.71-1.58 3.83-1.56 5.57-3.8 5.8-4.15zM16 5.82c2.64 0 5.05.97 6.88 2.56-.2.32-1.78 2.4-5.47 3.78-1.71-3.14-3.61-5.72-3.9-6.1A10.22 10.22 0 0116 5.82zM11.7 6.7c.28.36 2.15 2.96 3.88 6.04-4.9 1.3-9.22 1.28-9.7 1.27A10.21 10.21 0 0111.7 6.7zM5.8 16.01v-.27c.47.01 5.55.1 10.77-1.49.3.59.59 1.18.86 1.79-.14.04-.27.08-.41.13-5.4 1.74-8.27 6.5-8.51 6.92A10.18 10.18 0 015.8 16zM16 26.2a10.17 10.17 0 01-6.28-2.16c.2-.4 2.51-4.87 8.49-6.96l.07-.02a36.7 36.7 0 011.85 6.55A10.16 10.16 0 0116 26.2zm5.84-1.75a38.44 38.44 0 00-1.72-6.14c3.25-.52 6.1.33 6.45.44a10.22 10.22 0 01-4.73 5.7z" fill="white"/>
+          </svg>
+          <span class="ms-2 drib-footer-logo-text">Dribbble</span>
+        </div>
+        <p class="drib-footer-tagline">Dribbble is the world's leading community for creatives to share, grow, and get hired.</p>
+        <div class="drib-social-links mt-3">
+          <a href="#"><i class="bi bi-twitter-x"></i></a>
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-pinterest"></i></a>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div class="col-lg-2 col-md-3 col-6">
+        <div class="drib-footer-heading">For Designers</div>
+        <ul class="drib-footer-links">
+          <li><a href="#">Go Pro!</a></li>
+          <li><a href="#">Explore Projects</a></li>
+          <li><a href="#">Design Blog</a></li>
+          <li><a href="#">Overtime Podcast</a></li>
+          <li><a href="#">Playoffs</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-3 col-6">
+        <div class="drib-footer-heading">Hire Designers</div>
+        <ul class="drib-footer-links">
+          <li><a href="#">Post a Job Opening</a></li>
+          <li><a href="#">Post a Freelance</a></li>
+          <li><a href="#">Search for Designers</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-3 col-6">
+        <div class="drib-footer-heading">Company</div>
+        <ul class="drib-footer-links">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Support</a></li>
+          <li><a href="#">Media Kit</a></li>
+          <li><a href="#">Testimonials</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-2 col-md-3 col-6">
+        <div class="drib-footer-heading">Directories</div>
+        <ul class="drib-footer-links">
+          <li><a href="#">Design Jobs</a></li>
+          <li><a href="#">Designers for Hire</a></li>
+          <li><a href="#">Freelance Designers</a></li>
+          <li><a href="#">Tags</a></li>
+          <li><a href="#">Places</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="drib-footer-hr mt-5"/>
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <div class="drib-footer-copy">© 2025 Dribbble Clone · Built with Django &amp; Bootstrap</div>
+      <div class="d-flex gap-3">
+        <a href="#" class="drib-footer-legal">Privacy</a>
+        <a href="#" class="drib-footer-legal">Terms</a>
+        <a href="#" class="drib-footer-legal">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap 5 JS Bundle (External CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JS -->
+<script src="{% static 'shots/js/main.js' %}"></script>
+
+</body>
+</html>
